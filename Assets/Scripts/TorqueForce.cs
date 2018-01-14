@@ -13,6 +13,6 @@ public class TorqueForce : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		_thisRigidbody.AddTorque(transform.right * force * Time.deltaTime, ForceMode.Acceleration);
+		_thisRigidbody.AddTorque(transform.right * force, ForceMode.Force);
 	}
 }
