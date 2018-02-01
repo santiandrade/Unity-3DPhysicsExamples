@@ -6,15 +6,7 @@ public class ExplosionForce : MonoBehaviour
 	public float power = 10.0F;
 	public KeyCode keyToExplode = KeyCode.Space;
 
-	void Update()
-	{
-		if (Input.GetKeyDown(keyToExplode))
-		{
-			ExplodeBomb();
-		}
-	}
-
-	private void ExplodeBomb()
+	public void ExplodeBomb()
 	{
 		Vector3 explosionPos = transform.position;
 		Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
@@ -29,6 +21,6 @@ public class ExplosionForce : MonoBehaviour
 			}
 		}
 
-		Destroy(gameObject);
+		//Destroy(gameObject);
 	}
 }

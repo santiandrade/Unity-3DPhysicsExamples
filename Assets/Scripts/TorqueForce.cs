@@ -5,6 +5,7 @@ public class TorqueForce : MonoBehaviour
 	public float force = 100f;
 
 	private Rigidbody _thisRigidbody;
+	private bool _isOn = false;
 
 	void Start()
 	{
@@ -13,6 +14,14 @@ public class TorqueForce : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		_thisRigidbody.AddTorque(transform.right * force, ForceMode.Force);
+		if (_isOn)
+		{
+			_thisRigidbody.AddTorque(transform.forward * force, ForceMode.Acceleration);
+		}
+	}
+
+	public void Activate()
+	{
+		_isOn = !_isOn;
 	}
 }
