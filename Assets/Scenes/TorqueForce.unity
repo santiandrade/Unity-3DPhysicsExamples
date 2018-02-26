@@ -663,6 +663,11 @@ Prefab:
       propertyPath: forceValueIndicator
       value: 
       objectReference: {fileID: 1076273955}
+    - target: {fileID: 1398450821464862, guid: 4ef8afa32dae50a41be6da00497854bf, type: 2}
+      propertyPath: m_Icon
+      value: 
+      objectReference: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000,
+        type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4ef8afa32dae50a41be6da00497854bf, type: 2}
   m_IsPrefabParent: 0
