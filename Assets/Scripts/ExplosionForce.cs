@@ -1,26 +1,46 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class ExplosionForce : MonoBehaviour
 {
-	public float radius = 5.0F;
-	public float power = 10.0F;
-	public KeyCode keyToExplode = KeyCode.Space;
+	public float radius = 30.0F;
+	public float force = 30.0F;
+	public Text forceValueIndicator;
+
+	void Start()
+	{
+		RefreshForceValueIndicator();
+	}
 
 	public void ExplodeBomb()
 	{
-		Vector3 explosionPos = transform.position;
-		Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+		Vector3 explosionPosition = transform.position;
+		Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
 		foreach (Collider hit in colliders)
 		{
-			Rigidbody rb = hit.GetComponent<Rigidbody>();
+			Rigidbody rigidbodyToApplyForce = hit.GetComponent<Rigidbody>();
 
-			if (rb != null)
+			if (rigidbodyToApplyForce != null)
 			{
-				rb.AddExplosionForce(power, explosionPos, radius);
-				rb.useGravity = true;
+				rigidbodyToApplyForce.AddExplosionForce(force, explosionPosition, radius, 1.0f, ForceMode.Impulse);
 			}
 		}
+	}
 
-		//Destroy(gameObject);
+	public void IncrementForce()
+	{
+		force = Mathf.Clamp(force + 10f, force, 1000f);
+		RefreshForceValueIndicator();
+	}
+
+	public void DecrementForce()
+	{
+		force = Mathf.Clamp(force - 10f, 0, force);
+		RefreshForceValueIndicator();
+	}
+
+	private void RefreshForceValueIndicator()
+	{
+		forceValueIndicator.text = force.ToString();
 	}
 }

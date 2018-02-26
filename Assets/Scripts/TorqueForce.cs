@@ -1,27 +1,39 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class TorqueForce : MonoBehaviour
 {
-	public float force = 100f;
+	public float force = 2f;
+	public Text forceValueIndicator;
 
 	private Rigidbody _thisRigidbody;
-	private bool _isOn = false;
 
 	void Start()
 	{
 		_thisRigidbody = GetComponent<Rigidbody>();
+		_thisRigidbody.maxAngularVelocity = 20f;
+		RefreshForceValueIndicator();
 	}
 
 	void FixedUpdate()
 	{
-		if (_isOn)
-		{
-			_thisRigidbody.AddTorque(transform.forward * force, ForceMode.Acceleration);
-		}
+		_thisRigidbody.AddTorque(transform.forward * force);
 	}
 
-	public void Activate()
+	public void IncrementForce()
 	{
-		_isOn = !_isOn;
+		force = Mathf.Clamp(force + 1f, force, 20f);
+		RefreshForceValueIndicator();
+	}
+
+	public void DecrementForce()
+	{
+		force = Mathf.Clamp(force - 1f, 0, force);
+		RefreshForceValueIndicator();
+	}
+
+	private void RefreshForceValueIndicator()
+	{
+		forceValueIndicator.text = force.ToString();
 	}
 }
