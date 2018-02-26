@@ -29,7 +29,7 @@ public class ExplosionForce : MonoBehaviour
 
 	public void IncrementForce()
 	{
-		force = Mathf.Clamp(force + 10f, force, 1000f);
+		force = Mathf.Clamp(force + 10f, force, 500f);
 		RefreshForceValueIndicator();
 	}
 

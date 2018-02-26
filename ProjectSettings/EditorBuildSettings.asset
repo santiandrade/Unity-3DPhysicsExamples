@@ -6,5 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Explosion.unity
-    guid: c8fea9a115361d74cac5acb413199f95
+    path: Assets/Scenes/NormalForce.unity
+    guid: 7d0e55006ba86fa4c84f4ca35b87d2f0
+  - enabled: 1
+    path: Assets/Scenes/ExplosionForce.unity
+    guid: ec728bb46ad6b3e43a311b43a3ef446c
+  - enabled: 1
+    path: Assets/Scenes/TorqueForce.unity
+    guid: 7c58a93a2825d9a41aa47dcc466005cf

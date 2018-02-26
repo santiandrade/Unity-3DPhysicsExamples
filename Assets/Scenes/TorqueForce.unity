@@ -779,7 +779,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1076273953}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -305, y: 156.4632, z: 0}
+  m_LocalPosition: {x: -245, y: 156.4632, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 376593164}
@@ -787,7 +787,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95, y: -50}
+  m_AnchoredPosition: {x: 155, y: -50}
   m_SizeDelta: {x: 50, y: 20}
   m_Pivot: {x: -0.000000074505806, y: 0.5}
 --- !u!114 &1076273955
@@ -984,7 +984,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 45, y: -50.00006}
-  m_SizeDelta: {x: 45, y: 20}
+  m_SizeDelta: {x: 105, y: 20}
   m_Pivot: {x: -0.000000074505806, y: 0.5}
 --- !u!114 &1838147271
 MonoBehaviour:
@@ -1018,7 +1018,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Force:'
+  m_Text: 'Rotating Force:'
 --- !u!222 &1838147272
 CanvasRenderer:
   m_ObjectHideFlags: 0
