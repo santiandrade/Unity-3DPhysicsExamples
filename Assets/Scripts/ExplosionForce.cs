@@ -6,6 +6,7 @@ public class ExplosionForce : MonoBehaviour
 	public float radius = 30.0F;
 	public float force = 30.0F;
 	public Text forceValueIndicator;
+	public ParticleSystem explosionFX;
 
 	void Start()
 	{
@@ -14,6 +15,12 @@ public class ExplosionForce : MonoBehaviour
 
 	public void ExplodeBomb()
 	{
+		if (force > 0f)
+		{
+			explosionFX.Clear(true);
+			explosionFX.Play(true);
+		}
+
 		Vector3 explosionPosition = transform.position;
 		Collider[] colliders = Physics.OverlapSphere(explosionPosition, radius);
 		foreach (Collider hit in colliders)
